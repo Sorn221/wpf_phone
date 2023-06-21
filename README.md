@@ -5,24 +5,22 @@
 1) Создаем базу данных в PgAdmin, называем ее как нибудь, скрипт для создания сущностей:
  ```sql
 |   CREATE TABLE "Company"
-|   (
-|       "Id" SERIAL PRIMARY KEY,
-|       "Title" character varying(150),
-|       "CEO" character varying(150),
-|       "Capital" double precision,
-|       CONSTRAINT company_pkey PRIMARY KEY ("Id")
-|   );
-|   
-|   CREATE TABLE "Phone"
-|   (
-|       "Id" SERIAL PRIMARY KEY,
-|       "Title" character varying(150),
-|       "CompanyId" integer,
-|       "Price" numeric(15, 2),
-|       "Definition" text COLLATE,
-|       "Image" text COLLATE,
-|       CONSTRAINT phone_pkey PRIMARY KEY ("Id")
-|   ); 
+|(
+|   "Id" SERIAL PRIMARY KEY,
+|   "Title" character varying(150),
+|   "CEO" character varying(150),
+|   "Capital" double precision
+|);|
+|CREATE TABLE "Phone"
+|(
+|   "Id" SERIAL PRIMARY KEY,
+|   "Title" character varying(150),
+|   "CompanyId" integer,
+|   "Price" numeric(15, 2),
+|   "Definition" text,
+|   "Image" text,
+|FOREIGN KEY ("CompanyId") REFERENCES "Company"("Id")
+|);
 ```
 2) Распаковываем архив
 3) Открываем папку "wpf_phone"
