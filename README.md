@@ -19,7 +19,7 @@
 |   "Price" numeric(15, 2),
 |   "Definition" text,
 |   "Image" text,
-|FOREIGN KEY ("CompanyId") REFERENCES "Company"("Id")
+|   FOREIGN KEY ("CompanyId") REFERENCES "Company"("Id")
 |);
 ```
 2) Распаковываем архив
