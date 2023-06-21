@@ -10,7 +10,7 @@
 |   "Title" character varying(150),
 |   "CEO" character varying(150),
 |   "Capital" double precision
-|);|
+|);
 |CREATE TABLE "Phone"
 |(
 |   "Id" SERIAL PRIMARY KEY,
